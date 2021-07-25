@@ -1,0 +1,91 @@
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<nav class="navbar navbar-inverse row">		  
+	<div class="navbar-header">
+		<a href="#">Library Management System</a>
+	</div>
+
+	<ul class="nav navbar-nav navbar-right ">
+	<?php
+
+		if(!isset($_SESSION['username'])){
+			echo '<li><a href="../View/RegistrationPage.php" ><img src="../image/sign-up.png">Sign Up</a></li>';	 
+		}else{
+			echo "<li><span>Hello, ".$_SESSION['username']."</span></li>";
+			echo '<li><a href="../Controller/FrontController.php?action=logout"><img src="../image/sign-out.png">Logout</a></li>';
+		}
+    	
+
+	?>
+	</ul>		  
+</nav>
+
+<style type="text/css">
+		
+		.nav>li>a:hover, .dropdown-content a:hover, .dropdown:hover, .navbar-header a:hover{
+		  border: 1px solid gray;
+		  border-radius: 15px;
+		  color:pink;
+		}
+		img {
+		    vertical-align: middle;
+		    border: 0; 
+		}
+		.navbar-inverse{
+			margin-bottom: 0;
+			background-color: black;
+   			border-color: black;	
+		}
+		.navbar-nav>li>a, .navbar-nav>li>span{
+		    padding-top: 15px;
+		    padding-bottom: 10px;
+		    
+		}
+		.nav>li>a, .nav>li>span, .navbar-header>a{
+		    position: relative;
+		    display: block;
+		    padding-left: 15px;
+		    padding-right: 15px;
+		    color:gray;
+		    text-decoration: none;
+		}
+		.navbar {
+		    border: 1px solid transparent;
+		    position: relative;
+    		height: 53px;
+		}
+		.navbar-right {
+		    float: right!important;
+		    margin-right: -15px;
+		}
+		.navbar-nav {
+		    float: left;
+		    margin: 0;
+		}
+		.navbar-nav>li {
+		    float: left;
+		    position: relative;
+    		display: block;   	
+		}
+		.nav {
+    		padding-left: 0;
+    	}
+		.navbar-header {
+		    float: left;
+		    padding-top:10px;
+		    font-size:20px;
+		}
+		.vertical-center {
+			margin: 0;
+			position: relative;
+			top:50%;
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+		}
+
+
+
+		
+</style>
